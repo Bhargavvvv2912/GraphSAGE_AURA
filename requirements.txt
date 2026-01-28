@@ -1,25 +1,24 @@
-absl-py==0.2.2
-astor==0.6.2
-backports.weakref==1.0.post1
-bleach==1.5.0
-decorator==4.3.0
-enum34==1.1.6
-funcsigs==1.0.2
-futures==3.2.0
-gast==0.2.0
-grpcio==1.12.1
-html5lib==0.9999999
-Markdown==2.6.11
-mock==2.0.0
+# --- Research Core (Pinned to 2017) ---
 networkx==1.11
 numpy==1.14.5
-pbr==4.0.4
-protobuf==3.6.0
 scikit-learn==0.19.1
 scipy==1.1.0
+astor==0.6.2
+decorator==4.3.0
+gast==0.2.0
+grpcio==1.12.1
+protobuf==3.6.0
 six==1.11.0
-sklearn==0.0
-tensorboard==1.8.0
-tensorflow==1.8.0
 termcolor==1.1.0
 Werkzeug==0.14.1
+
+# --- Infrastructure Bridge (Lifted for Python 3.10/3.11) ---
+absl-py>=0.7.0          # Fixes the version detection crash
+tensorflow==1.15.0      # The only TF 1.x version compatible with Python 3.8+
+tensorboard==1.15.0     # Matches the TF version
+setuptools<58.0.0       # Required to install legacy packages without 2to3 errors
+
+# --- Utility & UI ---
+bleach==1.5.0
+html5lib==0.9999999
+Markdown==2.6.11
